@@ -1,5 +1,6 @@
 using FileUnificationImage.Tranforms;
 using System.ComponentModel;
+using System.Security.Cryptography.Xml;
 
 namespace ImageTransformWinForms
 {
@@ -71,17 +72,23 @@ namespace ImageTransformWinForms
 
         private void buttonFolder_Click(object sender, EventArgs e)
         {
+            if (!Directory.Exists(".\\Input"))
+            {
+                Directory.CreateDirectory(".\\Input");
+            }
+
+            if (!Directory.Exists(".\\Output"))
+            {
+                Directory.CreateDirectory(".\\Output");
+            }
+
             var files = Directory.GetFiles(".\\Input");
             int index = 0;
             foreach (var file in files)
             {
-                var img = (Bitmap)Image.FromFile(file);
-                var newImg = SizeTransform.Transform(img, int.Parse(textBoxSzieX.Text), int.Parse(textBoxSizeY.Text));
-                newImg = ContrastTransform.Transform(newImg, trackBarContrast.Value);
-                newImg = GrayScaleTransform.Transform(newImg);
-                newImg = EdgeTransform.Transform(newImg, trackBarEdge.Value);
-                newImg.Save($".\\Output\\{index}.tiff");
-                Console.WriteLine($".\\Output\\{index}.tiff");
+                Oryginal = (Bitmap)Image.FromFile(file);
+                Transform();
+                Transformed.Save($".\\Output\\{index}.tiff");
                 index++;
             }
         }
