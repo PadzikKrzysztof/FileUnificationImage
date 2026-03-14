@@ -18,8 +18,10 @@ namespace FileUnificationImage.Tranforms
                 {
                     if (i == 0 || j == 0 || i == img.Width - 1 || j == img.Height - 1)
                     {
-                        newImg.SetPixel(i, j, Color.FromArgb(0, 0, 0, 0));
-
+                        lock (newImg)
+                        {
+                            newImg.SetPixel(i, j, Color.FromArgb(0, 0, 0, 0));
+                        }
                         continue;
                     }
 
@@ -29,22 +31,28 @@ namespace FileUnificationImage.Tranforms
                     grayVale += (int)img.GetPixel(i, j - 1).R;
                     grayVale += (int)img.GetPixel(i, j).R * (-8);
                     grayVale += (int)img.GetPixel(i, j + 1).R;
-                    grayVale += (int)img.GetPixel(i+1, j - 1).R;
+                    grayVale += (int)img.GetPixel(i + 1, j - 1).R;
                     grayVale += (int)img.GetPixel(i + 1, j).R;
                     grayVale += (int)img.GetPixel(i + 1, j + 1).R;
 
                     grayVale = Math.Abs(grayVale);
                     if (grayVale <= threashold)
                     {
-                        newImg.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+                        lock (newImg)
+                        {
+                            newImg.SetPixel(i, j, Color.FromArgb(255, 255, 255));
+                        }
                     }
                     else
                     {
-                        newImg.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+                        lock (newImg)
+                        {
+                            newImg.SetPixel(i, j, Color.FromArgb(0, 0, 0));
+                        }
                     }
+
                 }
             }
-
             return newImg;
         }
     }

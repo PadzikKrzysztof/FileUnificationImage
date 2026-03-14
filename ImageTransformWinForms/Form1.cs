@@ -84,13 +84,28 @@ namespace ImageTransformWinForms
 
             var files = Directory.GetFiles(".\\Input");
             int index = 0;
+            var maxIndex = files.Count();
             foreach (var file in files)
             {
                 Oryginal = (Bitmap)Image.FromFile(file);
                 Transform();
                 Transformed.Save($".\\Output\\{index}.tiff");
                 index++;
+                buttonFolder.Text = $"{index}/{maxIndex}";
+                Refresh();
             }
+
+            buttonFolder.Text = $"Przetwórz Folder Input";
+        }
+
+        private void trackBarContrast_Scroll(object sender, EventArgs e)
+        {
+            groupBoxContrast.Text = $"Kontrast - {trackBarContrast.Value}";
+        }
+
+        private void trackBarEdge_Scroll(object sender, EventArgs e)
+        {
+            groupBoxEdge.Text = $"Wykrycie krawêci - {trackBarEdge.Value}";
         }
     }
 }

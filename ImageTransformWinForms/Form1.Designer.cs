@@ -32,13 +32,13 @@
             pictureBox2 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
-            groupBox1 = new GroupBox();
+            groupBoxContrast = new GroupBox();
             trackBarContrast = new TrackBar();
             label1 = new Label();
             checkBoxContrast = new CheckBox();
             groupBox2 = new GroupBox();
             checkBoxGrayScale = new CheckBox();
-            groupBox3 = new GroupBox();
+            groupBoxEdge = new GroupBox();
             trackBarEdge = new TrackBar();
             label2 = new Label();
             checkBoxEdge = new CheckBox();
@@ -51,10 +51,10 @@
             buttonFolder = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            groupBox1.SuspendLayout();
+            groupBoxContrast.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarContrast).BeginInit();
             groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            groupBoxEdge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarEdge).BeginInit();
             groupBox4.SuspendLayout();
             SuspendLayout();
@@ -99,17 +99,17 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // groupBox1
+            // groupBoxContrast
             // 
-            groupBox1.Controls.Add(trackBarContrast);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(checkBoxContrast);
-            groupBox1.Location = new Point(708, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(325, 99);
-            groupBox1.TabIndex = 11;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Kontrast";
+            groupBoxContrast.Controls.Add(trackBarContrast);
+            groupBoxContrast.Controls.Add(label1);
+            groupBoxContrast.Controls.Add(checkBoxContrast);
+            groupBoxContrast.Location = new Point(708, 12);
+            groupBoxContrast.Name = "groupBoxContrast";
+            groupBoxContrast.Size = new Size(325, 99);
+            groupBoxContrast.TabIndex = 11;
+            groupBoxContrast.TabStop = false;
+            groupBoxContrast.Text = "Kontrast";
             // 
             // trackBarContrast
             // 
@@ -119,6 +119,7 @@
             trackBarContrast.Name = "trackBarContrast";
             trackBarContrast.Size = new Size(226, 56);
             trackBarContrast.TabIndex = 16;
+            trackBarContrast.Scroll += trackBarContrast_Scroll;
             // 
             // label1
             // 
@@ -159,26 +160,26 @@
             checkBoxGrayScale.Text = "załączone";
             checkBoxGrayScale.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // groupBoxEdge
             // 
-            groupBox3.Controls.Add(trackBarEdge);
-            groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(checkBoxEdge);
-            groupBox3.Location = new Point(708, 183);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(325, 99);
-            groupBox3.TabIndex = 13;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Wykrycie krawędzi";
+            groupBoxEdge.Controls.Add(trackBarEdge);
+            groupBoxEdge.Controls.Add(label2);
+            groupBoxEdge.Controls.Add(checkBoxEdge);
+            groupBoxEdge.Location = new Point(708, 183);
+            groupBoxEdge.Name = "groupBoxEdge";
+            groupBoxEdge.Size = new Size(325, 99);
+            groupBoxEdge.TabIndex = 13;
+            groupBoxEdge.TabStop = false;
+            groupBoxEdge.Text = "Wykrycie krawędzi";
             // 
             // trackBarEdge
             // 
             trackBarEdge.Location = new Point(93, 43);
             trackBarEdge.Maximum = 255;
-            trackBarEdge.Minimum = -255;
             trackBarEdge.Name = "trackBarEdge";
             trackBarEdge.Size = new Size(226, 56);
             trackBarEdge.TabIndex = 17;
+            trackBarEdge.Scroll += trackBarEdge_Scroll;
             // 
             // label2
             // 
@@ -272,9 +273,9 @@
             ClientSize = new Size(1045, 450);
             Controls.Add(buttonFolder);
             Controls.Add(groupBox4);
-            Controls.Add(groupBox3);
+            Controls.Add(groupBoxEdge);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
+            Controls.Add(groupBoxContrast);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
@@ -283,13 +284,13 @@
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            groupBoxContrast.ResumeLayout(false);
+            groupBoxContrast.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarContrast).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            groupBoxEdge.ResumeLayout(false);
+            groupBoxEdge.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarEdge).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
@@ -302,12 +303,12 @@
         private PictureBox pictureBox2;
         private Button button1;
         private Button button2;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxContrast;
         private Label label1;
         private CheckBox checkBoxContrast;
         private GroupBox groupBox2;
         private CheckBox checkBoxGrayScale;
-        private GroupBox groupBox3;
+        private GroupBox groupBoxEdge;
         private Label label2;
         private CheckBox checkBoxEdge;
         private GroupBox groupBox4;
