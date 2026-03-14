@@ -104,7 +104,7 @@
             groupBoxContrast.Controls.Add(trackBarContrast);
             groupBoxContrast.Controls.Add(label1);
             groupBoxContrast.Controls.Add(checkBoxContrast);
-            groupBoxContrast.Location = new Point(708, 12);
+            groupBoxContrast.Location = new Point(708, 154);
             groupBoxContrast.Name = "groupBoxContrast";
             groupBoxContrast.Size = new Size(325, 99);
             groupBoxContrast.TabIndex = 11;
@@ -143,7 +143,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(checkBoxGrayScale);
-            groupBox2.Location = new Point(708, 117);
+            groupBox2.Location = new Point(708, 259);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(325, 60);
             groupBox2.TabIndex = 12;
@@ -165,7 +165,7 @@
             groupBoxEdge.Controls.Add(trackBarEdge);
             groupBoxEdge.Controls.Add(label2);
             groupBoxEdge.Controls.Add(checkBoxEdge);
-            groupBoxEdge.Location = new Point(708, 183);
+            groupBoxEdge.Location = new Point(708, 325);
             groupBoxEdge.Name = "groupBoxEdge";
             groupBoxEdge.Size = new Size(325, 99);
             groupBoxEdge.TabIndex = 13;
@@ -207,7 +207,7 @@
             groupBox4.Controls.Add(label3);
             groupBox4.Controls.Add(textBoxSzieX);
             groupBox4.Controls.Add(checkBoxScale);
-            groupBox4.Location = new Point(708, 288);
+            groupBox4.Location = new Point(708, 12);
             groupBox4.Name = "groupBox4";
             groupBox4.Size = new Size(325, 136);
             groupBox4.TabIndex = 14;

@@ -25,18 +25,30 @@ namespace FileUnificationImage.Tranforms
                         continue;
                     }
 
-                    var grayVale = (int)img.GetPixel(i - 1, j - 1).R;
-                    grayVale += (int)img.GetPixel(i - 1, j).R;
-                    grayVale += (int)img.GetPixel(i - 1, j + 1).R;
-                    grayVale += (int)img.GetPixel(i, j - 1).R;
-                    grayVale += (int)img.GetPixel(i, j).R * (-8);
-                    grayVale += (int)img.GetPixel(i, j + 1).R;
-                    grayVale += (int)img.GetPixel(i + 1, j - 1).R;
-                    grayVale += (int)img.GetPixel(i + 1, j).R;
-                    grayVale += (int)img.GetPixel(i + 1, j + 1).R;
+                    var grayValeX = (int)img.GetPixel(i - 1, j - 1).R * -1;
+                    grayValeX += (int)img.GetPixel(i - 1, j).R * 0;
+                    grayValeX += (int)img.GetPixel(i - 1, j + 1).R * 1;
+                    grayValeX += (int)img.GetPixel(i, j - 1).R * -1;
+                    grayValeX += (int)img.GetPixel(i, j).R * 0;
+                    grayValeX += (int)img.GetPixel(i, j + 1).R * 1;
+                    grayValeX += (int)img.GetPixel(i + 1, j - 1).R * -1;
+                    grayValeX += (int)img.GetPixel(i + 1, j).R * 0;
+                    grayValeX += (int)img.GetPixel(i + 1, j + 1).R * 1;
 
-                    grayVale = Math.Abs(grayVale);
-                    if (grayVale <= threashold)
+                    grayValeX = Math.Abs(grayValeX);
+
+                    var grayValeY = (int)img.GetPixel(i - 1, j - 1).R * -1;
+                    grayValeY += (int)img.GetPixel(i - 1, j).R * -1;
+                    grayValeY += (int)img.GetPixel(i - 1, j + 1).R * -1;
+                    grayValeY += (int)img.GetPixel(i, j - 1).R * 0;
+                    grayValeY += (int)img.GetPixel(i, j).R * 0;
+                    grayValeY += (int)img.GetPixel(i, j + 1).R * 0;
+                    grayValeY += (int)img.GetPixel(i + 1, j - 1).R * 1;
+                    grayValeY += (int)img.GetPixel(i + 1, j).R * 1;
+                    grayValeY += (int)img.GetPixel(i + 1, j + 1).R * 1;
+
+                    var greyVal = (int)Math.Sqrt(Math.Pow(grayValeX, 2) + Math.Pow(grayValeY, 2));
+                    if (greyVal <= threashold)
                     {
                         lock (newImg)
                         {
@@ -55,5 +67,7 @@ namespace FileUnificationImage.Tranforms
             }
             return newImg;
         }
+
+
     }
 }

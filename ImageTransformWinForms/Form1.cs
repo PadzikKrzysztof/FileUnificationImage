@@ -1,6 +1,6 @@
 using FileUnificationImage.Tranforms;
+using ImageTransformWinForms.Tranforms;
 using System.ComponentModel;
-using System.Security.Cryptography.Xml;
 
 namespace ImageTransformWinForms
 {
@@ -62,6 +62,7 @@ namespace ImageTransformWinForms
             {
                 Preprocessed = EdgeTransform.Transform(Preprocessed, trackBarEdge.Value);
             }
+
             Transformed = Preprocessed;
         }
 
