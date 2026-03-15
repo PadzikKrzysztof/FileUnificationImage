@@ -19,12 +19,12 @@ namespace ImageTransformWinForms
             else
             {
                 index *= 10;
-                SubSave(img, index++, RotateFlipType.RotateNoneFlipNone);
-                SubSave(img, index++, RotateFlipType.RotateNoneFlipY);
-                SubSave(img, index++, RotateFlipType.RotateNoneFlipX);
-                SubSave(img, index++, RotateFlipType.Rotate90FlipX);
-                SubSave(img, index++, RotateFlipType.Rotate270FlipX);
-                SubSave(img, index++, RotateFlipType.Rotate180FlipX);
+                SubSave(img, ++index, RotateFlipType.RotateNoneFlipNone);
+                SubSave(img, ++index, RotateFlipType.RotateNoneFlipY);
+                SubSave(img, ++index, RotateFlipType.RotateNoneFlipX);
+                SubSave(img, ++index, RotateFlipType.Rotate90FlipX);
+                SubSave(img, ++index, RotateFlipType.Rotate270FlipX);
+                SubSave(img, ++index, RotateFlipType.Rotate180FlipX);
             }
         }
 
