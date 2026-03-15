@@ -14,7 +14,7 @@ namespace ImageTransformWinForms
         {
             if (!isAugmentm)
             {
-                img.Save($".\\Output\\{index}.tiff");
+                img.Save($".\\Output\\{index}.png");
             }
             else
             {
@@ -31,9 +31,9 @@ namespace ImageTransformWinForms
         private static void SubSave(Bitmap img, int index, RotateFlipType rotateFlipType)
         {
             var newImg = new Bitmap(img);
-            newImg.RotateFlip(RotateFlipType.Rotate180FlipXY);
+            newImg.RotateFlip(rotateFlipType);
             
-            newImg.Save($".\\Output\\{index}.tiff");
+            newImg.Save($".\\Output\\{index}.png");
         }
     }
 }
