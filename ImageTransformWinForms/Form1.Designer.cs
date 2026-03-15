@@ -49,6 +49,8 @@
             textBoxSzieX = new TextBox();
             checkBoxScale = new CheckBox();
             buttonFolder = new Button();
+            groupBox1 = new GroupBox();
+            checkBoxAugment = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBoxContrast.SuspendLayout();
@@ -57,6 +59,7 @@
             groupBoxEdge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackBarEdge).BeginInit();
             groupBox4.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -266,11 +269,32 @@
             buttonFolder.UseVisualStyleBackColor = true;
             buttonFolder.Click += buttonFolder_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(checkBoxAugment);
+            groupBox1.Location = new Point(344, 277);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(358, 60);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Augmentacja obrotu";
+            // 
+            // checkBoxAugment
+            // 
+            checkBoxAugment.AutoSize = true;
+            checkBoxAugment.Location = new Point(12, 25);
+            checkBoxAugment.Name = "checkBoxAugment";
+            checkBoxAugment.Size = new Size(97, 24);
+            checkBoxAugment.TabIndex = 0;
+            checkBoxAugment.Text = "załączone";
+            checkBoxAugment.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 450);
+            Controls.Add(groupBox1);
             Controls.Add(buttonFolder);
             Controls.Add(groupBox4);
             Controls.Add(groupBoxEdge);
@@ -294,6 +318,8 @@
             ((System.ComponentModel.ISupportInitialize)trackBarEdge).EndInit();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -320,5 +346,7 @@
         private TrackBar trackBarContrast;
         private TrackBar trackBarEdge;
         private Button buttonFolder;
+        private GroupBox groupBox1;
+        private CheckBox checkBoxAugment;
     }
 }

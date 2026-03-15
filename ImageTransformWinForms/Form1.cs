@@ -90,7 +90,8 @@ namespace ImageTransformWinForms
             {
                 Oryginal = (Bitmap)Image.FromFile(file);
                 Transform();
-                Transformed.Save($".\\Output\\{index}.tiff");
+                //Transformed.Save($".\\Output\\{index}.tiff");
+                ImageSaver.Save(Transformed, checkBoxAugment.Checked, index);
                 index++;
                 buttonFolder.Text = $"{index}/{maxIndex}";
                 Refresh();
